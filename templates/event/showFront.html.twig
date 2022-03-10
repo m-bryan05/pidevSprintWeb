@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Event{% endblock %}
+
+{% block content %}
+    <h1>Event</h1>
+
+    <table class="table">
+        <tbody>
+
+        <tr>
+            <th STYLE="color:white">ID</th>
+            <th STYLE="color:white">Nom</th>
+            <th STYLE="color:white">DateD</th>
+            <th STYLE="color:white">DateF</th>
+            <th STYLE="color:white">Description</th>
+
+        </tr>
+    {% if ( events is not null)  %}
+        {% for event in events %}
+        <tr>
+            <td STYLE="color:white">{{ event.id }}</td>
+            <td STYLE="color:white">{{ event.nom }}</td>
+            <td STYLE="color:white">{{ event.dateD ? event.dateD|date('Y-m-d H:i:s') : '' }}</td>
+            <td STYLE="color:white">{{ event.dateF ? event.dateF|date('Y-m-d H:i:s') : '' }}</td>
+            <td STYLE="color:white">{{ event.description }}</td>
+        </tr>
+        {% endfor %}
+    {% endif %}
+
+        </tbody>
+
+    </table>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vip{% endblock %}
+
+{% block content %}
+    <h1>Vip</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th style="color:white">Id</th>
+                <td style="color:white">{{ vip.id }}</td>
+            </tr>
+            <tr>
+                <th style="color:white">Nom</th>
+                <td style="color:white">{{ vip.nom }}</td>
+            </tr>
+            <tr>
+                <th style="color:white">Prenom</th>
+                <td style="color:white">{{ vip.prenom }}</td>
+            </tr>
+            <tr>
+                <th style="color:white">Email</th>
+                <td style="color:white">{{ vip.email }}</td>
+            </tr>
+            <tr>
+                <th style="color:white">Numero</th>
+                <td style="color:white">{{ vip.numero }}</td>
+            </tr>
+            <tr>
+                <th style="color:white">Score</th>
+                <td style="color:white">{{ vip.score }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_vip_index') }}" style="color: blue">back to list</a>
+
+    <a href="{{ path('app_vip_edit', {'id': vip.id}) }}" style="color: blue">edit</a>
+
+    {{ include('vip/_delete_form.html.twig') }}
+{% endblock %}

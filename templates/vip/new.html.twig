@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Vip{% endblock %}
+
+{% block content %}
+    <h1 style="color:white">Create new Vip</h1>
+
+   <tr style="color: white">{{ include('vip/_form.html.twig') }}</tr>
+
+    <a href="{{ path('app_vip_index') }}" style="color:white">back to list</a>
+{% endblock %}
